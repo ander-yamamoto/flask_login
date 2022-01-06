@@ -1,0 +1,4 @@
+auth
+**/db.*
+**/__pycache__
+
