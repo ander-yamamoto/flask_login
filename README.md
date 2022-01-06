@@ -5,6 +5,18 @@ Digital Ocean Tutorial in:
 https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
 
 
+clone repository then:
+```
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip 
+pip install -r requirements.txt
+```
+and when done editing
+```
+deactivate
+```
+
 
 To init database type on a python terminal:
 ```
