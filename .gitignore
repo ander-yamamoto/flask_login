@@ -1,0 +1,5 @@
+.venv
+auth
+**/db.*
+**/__pycache__
+
