@@ -17,6 +17,11 @@ and when done editing
 deactivate
 ```
 
+to activate in Windows use 
+```
+.\\.venv\Scripts\activate
+```
+
 
 To init database type on a python terminal:
 ```
