@@ -1,5 +1,5 @@
+*/.env_local
 .venv
-auth
 **/db.*
 **/__pycache__
 
