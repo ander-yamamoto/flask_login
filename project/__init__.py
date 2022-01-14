@@ -2,14 +2,19 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+from dotenv import dotenv_values
+
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
+setup = dotenv_values('.env')
 
 def create_app():
-    app = Flask(__name__)
 
-    app.config['SECRET_KEY'] = 'secret-key-goes-here'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    
+    app = Flask(__name__)
+    
+    app.config['SECRET_KEY'] = setup['SECRET_KEY']
+    app.config['SQLALCHEMY_DATABASE_URI'] = setup['SQLALCHEMY_DATABASE_URI']
 
     db.init_app(app)
 
@@ -18,6 +23,7 @@ def create_app():
     login_manager.init_app(app)
 
     from .models import User
+    from .models import Node
 
     @login_manager.user_loader
     def load_user(user_id):
