@@ -1,4 +1,4 @@
-*/.env_local
+.env_local
 .venv
 **/db.*
 **/__pycache__
