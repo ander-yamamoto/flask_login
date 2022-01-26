@@ -16,5 +16,6 @@ class Node(db.Model):
     item_id = db.Column(db.String(100), nullable=False) #TEXT NOT NULL,
     ip = db.Column(db.String(16), nullable=False) #VARCHAR(16) NOT NULL,
     status = db.Column(db.Integer, nullable=False) #INTEGER NOT NULL,
+    category = db.Column(db.String(100), nullable=False) ##TEXT NOT NULL
     last_update = db.Column(db.DateTime, nullable=False) #timestamp NOT NULL
 

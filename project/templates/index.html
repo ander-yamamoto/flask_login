@@ -1,10 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Flask Login Example
-</h1>
-<h2 class="subtitle">
-  Easy authentication and authorization in Flask.
-</h2>
+<div class = "rows">
+  <div class = "row">
+    <div class="columns">
+      {% for node in nodes %}
+      <div class="column">
+        {{node.name}}
+        <form method="POST" action="/">
+          <div class="field is-grouped is-grouped-centered">
+            <p class="control">
+              <button type="submit" class="button is-primary is-large" name='{{node.name}}' >
+                <span class="icon is-large" id='{{node.name}}'>
+                  <i class="fas fa-lightbulb" ></i>
+                </span>
+              </button>
+              <script>
+                $("#{{node.name}}").addClass("has-text-warning")
+             </script>
+            </p>
+          </div>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class = "row">
+    <form method="POST" action="/">
+      <div class="field is-grouped is-grouped-centered">
+        <p class="control">
+          <button type="submit" class="button is-primary" name='bt1'>
+            Acender Todas
+          </button>
+        </p>
+        <p class="control">
+          <button type="submit" class="button is-light" name =bt2>
+            Apagar todas
+          </button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}
